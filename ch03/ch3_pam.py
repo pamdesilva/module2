@@ -30,6 +30,8 @@ print("Hello " + name + "! You are " + age +  ' years old. You come from ' + loc
 
 ##############Task2
 
+def addition(num1, num2):
+    return(str(num1 + num2))
 
 def print_user_info():
     print('What\'s your name?')
@@ -42,9 +44,6 @@ def print_user_info():
     num_two = input()
     
     print("Hello " + name.title() + "!" + " Your lucky number is " + addition(int(num_one), int(num_two)))
-
-def addition(num1, num2):
-    return(str(num1 + num2))
 
 def hello_world():
     print_user_info()
