@@ -9,13 +9,15 @@ def DataBundlePurchase(truePasscode, balance):
    if checkPassword(truePasscode):
        print('Welcome!')
        showOptions(balance)
+       return "Run bundle purchase"
    else:
        passwordRetry(truePasscode, balance)
+       return "Retry password attempt"
 
 
 ################ Validates if user entered the correct password ################
 def checkPassword(truePasscode):
-    attempt = input('Please enter your password:')
+    attempt = input('Please enter your password: ')
     if attempt == truePasscode:
         return True
     else:
@@ -81,8 +83,8 @@ def showBalance(balance):
     
 ################ Validates user's phone number ################     
 def checkNumber():
-    numOne = input('Please enter your mobile number:')
-    numTwo = input('Please enter your mobile number again:')
+    numOne = input('Please enter your mobile number: ')
+    numTwo = input('Please enter your mobile number again: ')
     
     if numOne == numTwo:
         return True
@@ -132,7 +134,7 @@ def purchaseData(balance):
     
 ################ Gives user the option to buy more data or top up credit again if previous attempt was unsuccessful ################     
 def purchaseAgain(func, balance):
-    chooseLower = input('Would you like to purchase a lower amount? y/n')
+    chooseLower = input('Would you like to purchase a lower amount? y/n ')
     if chooseLower == 'y':
         return func(balance)
     else:
