@@ -11,7 +11,9 @@ def DataBundlePurchase(truePasscode, balance):
        showOptions(balance)
    else:
        passwordRetry(truePasscode, balance)
-   
+
+
+################ Validates if user entered the correct password ################
 def checkPassword(truePasscode):
     attempt = input('Please enter your password:')
     if attempt == truePasscode:
@@ -39,19 +41,26 @@ def passwordRetry(truePasscode, balance):
 def showOptions(balance):
     print('Type "1" to check your credit balance')
     print('OR')
-    print('Type "2" to purchase more data')
+    print('Type "2" to purchase more data allowance')
+    print('OR')
+    print('Type "3" to top up your credit')
     response = input()
     if response == '1':
         showBalance(balance)
     elif response == '2':
         if checkBalance(balance):
-            print('Before you can purchase data, you\'ll need to validate your phone number.')
+            print('Before you can purchase more data, you\'ll need to validate your phone number.')
             checkNumber()
             purchaseData(balance)
         else:
             print('Sorry, this service is unavailable as you have insufficient credit.')
             showBalance(balance)
             print('You need at least $5 to purchase more data.')  
+    elif response == '3':
+        print('Before you can top up your credit, you\'ll need to validate your phone number.')
+        checkNumber()
+        topUpCredit(balance)
+        
     else:
         print('Sorry, we don\'t recognise the option you\'ve entered. Please try again.')
         showOptions(balance)
@@ -67,7 +76,7 @@ def checkBalance(balance):
     
 ################ Displays the user's credit balance ################         
 def showBalance(balance):
-    print('Your current balance is: $' + str(balance))
+    print('Your current balance: $' + str(format(balance, '.2f')))
  
     
 ################ Validates user's phone number ################     
@@ -80,34 +89,52 @@ def checkNumber():
     else:
         print('The two mobile numbers you entered didn\'t match. Please enter them again.')
         checkNumber()
-
-
+        
+        
+################ Top up user's credit ################     
+def topUpCredit(balance):
+    showBalance(balance)
+    print('How much credit would you like to add?')
+    
+    amount = float(input())
+    
+    if amount > 100:
+        print('Sorry, you can only top-up a maximum of $100 at a time. Would you like to enter a lower amount? y/n')
+        purchaseAgain(topUpCredit, balance)
+    elif amount <= 0:
+        print('Sorry, you\'ll need to enter an amout that\'a more than $0. Would you like to enter another amount? y/n')
+        purchaseAgain(topUpCredit, balance)
+    else:
+        balance += amount
+        print('You\'ve successfully added $' + format(amount, '.2f') + ' to your balance. Your new balance: $' + str(format(balance, '.2f')))
+        
+        
 ################ Runs conditionals for buying more data ################             
 def purchaseData(balance):
     showBalance(balance)
-    print('How much credit would you like to spend for more data?')
-    amount = int(input())
+    print('How much credit would you like to spend for more data allowance?')
+    amount = float(input())
     if amount < balance:
         if amount > 100:
             print('Sorry, you can only purchase $100 of data at a time.')
-            purchaseAgain(balance)
+            purchaseAgain(purchaseData, balance)
         else:    
             if amount % 5 == 0:
-                newBalance = round(balance - int(amount), 2)
-                print('You\'ve successfully added $' + str(amount) + ' of data to your mobile plan. Your new balance is $' + str(newBalance))
+                newBalance = round(balance - amount, 2)
+                print('You\'ve successfully added $' + str(format(amount, '.2f')) + ' of data to your mobile plan. Your new balance: $' + str(newBalance))
             else:
                 print('Sorry. You can only purchase data in increments of $5 (eg. $5, $10, $15, $20). Please enter a new amount.')
-                purchaseData(balance)
+                purchaseAgain(purchaseData, balance)
     if amount > balance:
         print('Sorry, you do not have sufficient credit for that amount.')
-        purchaseAgain(balance)           
+        purchaseAgain(purchaseData, balance)           
  
     
-################ Gives user the option to buy more data again if previous attempt was unsuccessful ################     
-def purchaseAgain(balance):
+################ Gives user the option to buy more data or top up credit again if previous attempt was unsuccessful ################     
+def purchaseAgain(func, balance):
     chooseLower = input('Would you like to purchase a lower amount? y/n')
     if chooseLower == 'y':
-        purchaseData(balance)
+        return func(balance)
     else:
         print('Thanks and have a nice day!')
         
