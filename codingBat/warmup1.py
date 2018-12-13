@@ -17,9 +17,9 @@ sleep_in(False, True) → True
 
 def sleep_in(weekday, vacation):
   if not weekday or vacation:
-    return print True
+    return print(True)
   else:
-    return print False
+    return print(False)
     
 sleep_in(False, False)
 sleep_in(True, False)
@@ -37,11 +37,11 @@ monkey_trouble(True, False) → False
 
 def monkey_trouble(a_smile, b_smile):
   if a_smile and b_smile:
-    return print True 
+    return print(True) 
   elif not a_smile and not b_smile:
-    return print True
+    return print(True)
   else:
-    return print False
+    return print(False)
 
 monkey_trouble(True, True)
 monkey_trouble(False, False)
@@ -128,3 +128,80 @@ def makes10(a, b):
     return True
   else:
     return False
+
+"""
+NEAR_HUNDRED
+
+Given an int n, return True if it is within 10 of 100 or 200. Note: abs(num) computes the absolute value of a number.
+
+near_hundred(93) → True
+near_hundred(90) → True
+near_hundred(89) → False
+
+"""
+
+def near_hundred(n):
+  if (abs(100 - n) <= 10) or (abs(200 -n) <= 10):
+    return True
+  else:
+    return False
+
+
+"""
+POS_NEG
+
+Given 2 int values, return True if one is negative and one is positive. Except if the parameter "negative" is True, then return True only if both are negative.
+
+
+pos_neg(1, -1, False) → True
+pos_neg(-1, 1, False) → True
+pos_neg(-4, -5, True) → True
+
+"""
+
+def pos_neg(a, b, negative):
+  if negative and (a < 0 and b < 0):
+    return True
+  elif not negative and (a < 0 and b > 0):
+    return True
+  elif not negative and (a > 0 and b < 0):
+    return True
+  else:
+    return False
+
+
+"""
+MISSING_CHAR
+
+
+Given a non-empty string and an int n, return a new string where the char at index n has been removed. The value of n will be a valid index of a char in the original string (i.e. n will be in the range 0..len(str)-1 inclusive).
+
+missing_char('kitten', 1) → 'ktten'
+missing_char('kitten', 0) → 'itten'
+missing_char('kitten', 4) → 'kittn'
+
+"""
+
+def missing_char(str, n):
+  return str[:n] + str[n+1:]
+
+
+"""
+FRONT3
+
+Given a string, we'll say that the front is the first 3 chars of the string. If the string length is less than 3, the front is whatever is there. Return a new string which is 3 copies of the front.
+
+front3('Java') → 'JavJavJav'
+front3('Chocolate') → 'ChoChoCho'
+front3('abc') → 'abcabcabc'
+
+"""
+
+def front3(str):
+  if len(str) < 3:
+    return str * 3
+  else:
+    return str[:3] * 3
+
+
+
