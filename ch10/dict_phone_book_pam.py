@@ -82,9 +82,9 @@ def returnToMainMenu():
     else:
         print('You have exited the phone book program. Good day to you.')
         
-def printPhoneBookToFile(phoneBook_dict):
+def printPhoneBookToFile(phoneBook):
     f = open('phoneBook.txt', 'w')
-    f.write(str(phoneBook_dict))
+    f.write(str(phoneBook))
     f.close()
     
 def phoneBook():
