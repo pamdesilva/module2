@@ -145,3 +145,6 @@ print('Sort metals by most shares available:', metals)
 
 sortBySharesAvailable = sorted(products.items(), key = lambda kv:kv[1][2], reverse=True)
 print('Sort metals in kv pairs by most shares available:', sortBySharesAvailable)
+
+mostSharesAvailable = sorted(products.items(), key = lambda kv:kv[1][2], reverse=True)[0]
+print('KV pair of most shares available:', mostSharesAvailable)
