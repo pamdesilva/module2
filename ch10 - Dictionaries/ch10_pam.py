@@ -5,6 +5,16 @@ Created on Fri Dec 14 09:51:55 2018
 @author: pamde
 """
 
+###############################################
+
+#CHAPTER 10 - DICTIONARIES
+
+###############################################
+
+#------------------------------------------------------------------------------
+#TASK 1 & 2: Create a dictionary for which you can assign, retrieve and update values
+#------------------------------------------------------------------------------
+print('\nTask 1:')
 x = {
      'bo': 5000, 
      'al': 20000, 
@@ -27,8 +37,6 @@ salary['al'] += 1000
 print(salary)
 
 
-######### Task 2
-
 print('\nTask 2:')
 
 phoneNumbers = {
@@ -40,33 +48,46 @@ phoneNumbers = {
 
 print(phoneNumbers)
 
-######### Task 3
-
+#--------------------------------------
+#TASK 3: Look up and delete values
+#--------------------------------------
 print('\nTask 3:')
 
 phoneNumbers['dipsy'] = 6455
 phoneNumbers['lala'] = 7323
 phoneNumbers['poe'] = 6878
-
 phoneNumbers['tinky winky'] = 6352
 
-#print(phoneNumbers)
+print(phoneNumbers)
 
-#del phoneNumbers['poe']
-#
+del phoneNumbers['poe']
+
+print(phoneNumbers)
+
+#This will return an error
 #del phoneNumbers[1]
 
 print(phoneNumbers)
 
 
-print('\nGet all keys or values:')
+#--------------------------------------------------------
+#TASK 4: Retrieving keys and values from a dictionary
+#--------------------------------------------------------
+print('\nTask 4:')
 
 print(phoneNumbers.keys())
 print(phoneNumbers.values())
 
-print('\nGet specific key or value:')
+#--------------------------------------------------------
+#TASK 5: Convert keys and value to a list data type
+#-------------------------------------------------------- 
+
+print('\nConvert key or value to list:')
 print(list(phoneNumbers.keys())[0])
 
+#--------------------------------------------------------
+#TASK 6: Avoiding key errors
+#-------------------------------------------------------- 
 
 print('\nCheck if a key exists in a dictionary:')
 k = 'eric'
@@ -75,6 +96,9 @@ if k in phoneNumbers:
 else:
     print(k, 'not found!')
     
+#--------------------------------------------------------
+#TASK 7 & 8: Sorting a dictionary
+#-------------------------------------------------------- 
     
 print('\nSorting a dictionary:')
 counts = {'a': 3, 'c': 1, 'b': 5}

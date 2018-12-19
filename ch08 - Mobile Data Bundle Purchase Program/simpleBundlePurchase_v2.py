@@ -4,15 +4,20 @@ Created on Tue Dec 11 13:52:30 2018
 
 @author: pamde
 """
+###############################################
+
+#CHAPTER 08 - DATA BUNDLE PURCHASE PROGRAM
+
+###############################################
 
 def DataBundlePurchase(truePasscode, balance):
    if checkPassword(truePasscode):
        print('Welcome!')
        showOptions(balance)
-       return "Run bundle purchase"
+       return "Ran data bundle purchase program"
    else:
        passwordRetry(truePasscode, balance)
-       return "Retry password attempt"
+       return "Ran data bundle purchase program"
 
 
 ################ Validates if user entered the correct password ################
@@ -36,7 +41,7 @@ def passwordRetry(truePasscode, balance):
             print('Welcome!')
             showOptions(balance)
         else:
-            print('Sorry! You\'ve used up your 3 tries. Your account has been temporarily locked. Please try again in an hour.')     
+            print('Sorry! You\'ve used up your 3 tries. Your account has been temporarily locked. Please try again in an hour.') 
 
 
 ################ Displays transaction options based on user input ################          

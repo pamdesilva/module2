@@ -4,6 +4,17 @@ Created on Thu Nov 29 09:34:30 2018
 
 @author: pamde
 """
+
+###############################################
+
+#CHAPTER 02 - OPERATIONS, STRINGS AND VARIABLES
+
+###############################################
+
+#---------------------------------------
+#TASK 1: Simple operations
+#---------------------------------------
+
 print(5 - 6)
 print(8 * 9)
 print(6 / 2)
@@ -12,13 +23,22 @@ print(5.0 / 2)
 print(5 % 2)
 print(2 * (10 + 3))
 print(2**4)
- 
+
+
+#---------------------------------------
+#TASK 2: Variable practise
+#---------------------------------------
+
 age = 5
 age = "almost there"
 age = 29.5
 age = 'I really don\'t know!'
  
 print(age)
+
+#---------------------------------------
+#TASK 3: Basic string manipulation
+#---------------------------------------
 
 print ('hello' + 'world')
 print ("Joke \n" * 3)
@@ -48,7 +68,9 @@ print(result)
 
 print("\n") 
 
-######## split strings
+#---------------------------------------
+#EXTRA: Split strings
+#---------------------------------------
 
 str1 = 'a,b,c,d,e,happy'
 
@@ -60,7 +82,9 @@ print(splitStr)
 
 print("\n") 
 
-######## replace variables in strings
+#---------------------------------------
+#TASK 4: Formatting
+#---------------------------------------
 
 age = 5
 like = "painting"

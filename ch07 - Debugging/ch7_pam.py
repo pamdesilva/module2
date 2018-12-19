@@ -4,15 +4,26 @@ Created on Thu Dec  6 11:19:02 2018
 
 @author: pamde
 """
+###############################################
+
+#CHAPTER 07 - DEBUGGING
+
+###############################################
+
+#---------------------------------------
+#TASK 1: Debugging using 'print' function
+#---------------------------------------
 
 ####### Change user input to int. Input values are strings by default
-#userInput = input('Please give me a number')
-#result = int(userInput) - 2
-#
-#print(type(userInput))
+userInput = input('Please give me a number')
+result = int(userInput) - 2
+
+print(type(userInput))
 
 
-####### Using breakpoints for debugging
+#---------------------------------------
+#TASK 2: Using breakpoints for debugging
+#---------------------------------------
 
 userInput = input('Please give me a number')
 

@@ -4,10 +4,16 @@ Created on Tue Dec 11 13:54:39 2018
 
 @author: pamde
 """
+###############################################
 
-from simpleBundlePurchase import DataBundlePurchase
+#CHAPTER 08 - DATA BUNDLE PURCHASE PROGRAM TEST
 
+###############################################
+from simpleBundlePurchase_v2 import DataBundlePurchase
+
+#---------------------------------------
 #Test call to programme:
+#---------------------------------------
 
 print ('TEST EXAMPLE 1')
 # database input, you will still need to check user pin

@@ -5,10 +5,51 @@ Created on Tue Dec  4 13:59:01 2018
 @author: pamde
 
 """
+###############################################
+
+#CHAPTER 04 - CONDITIONALS
+
+###############################################
+
+#---------------------------------------
+#TASK 3: IF statements
+#---------------------------------------
+
+number = input('Enter a number betwen 1 and 10:')
+number = int(number)
+if number > 10:
+    print('Too high!')
+if number <= 0:
+    print('Too low!')
+    
+#---------------------------------------
+#TASK 4: ELSE statements (cont' from above)
+#---------------------------------------
+#else:
+    #print('Too low!')
+
+#---------------------------------------
+#TASK 4: ELIF statements 
+#---------------------------------------
+
+age = 20
+
+if age < 13:
+    print('child')
+elif age < 18:
+    print('teen')
+elif age < 65:
+    print('adult')
+else:
+    print('pensioner')
+
+
+#---------------------------------------
+#EXTRA: Dice game
+#---------------------------------------
 
 import random
 
-  
 def addition(a, b):
     return a + b
 

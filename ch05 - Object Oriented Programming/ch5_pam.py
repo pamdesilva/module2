@@ -5,10 +5,17 @@ Created on Wed Dec  5 09:37:09 2018
 @author: pamde
 """
 
+###############################################
+
+#CHAPTER 05 - OBJECT ORIENTED PROGRAMMING
+
+###############################################
+
+#---------------------------------------
+#TASK 1: Using clases
+#---------------------------------------
+
 import sys
-
-############################## Task 1 ##############################
-
 
 class Customer(object):
     """A customer of ABC Bank with a checking account. Customers have the following properties:
@@ -42,6 +49,11 @@ pam.withdraw(1000.00)
 
 print(pam.balance)
 
+#---------------------------------------
+#TASK 2 & 3: Using inheritance
+#---------------------------------------
+
+
 class Animal():
     def eat(self):
         print('yum')
@@ -59,9 +71,6 @@ snoopy.bark()
 felix = Cat()
 felix.meow()
 
-
-
-############################## Task 2 ##############################
 
 ############### Robot superclass
 
@@ -97,7 +106,7 @@ class SoupRobot(CookRobot):
 #soupbot.makeTomatoSoup()
 
 
-################################# Cat game ##################################
+################################# Cat game 
  
 class Animal():
     def __init__(self, name, age=0):
@@ -134,7 +143,9 @@ class CatAgent(Cat):
 #cat001.meow()
 #cat001.detectMeow()
 
-################################# Combo animal + robots ##################################
+#---------------------------------------
+#TASK 4: Using association
+#---------------------------------------
 
 class SuperRobot():
     def __init__(self, name, age):
@@ -156,9 +167,6 @@ class SuperRobot():
     
     def clean(self):
         return self.o3.clean()
-    
-#name = input('What\'s your cat\'s name: ')
-#age = input('What\'s your cat\'s age: ')
         
 name = sys.argv[1]
 age = sys.argv[2]
