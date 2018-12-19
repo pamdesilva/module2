@@ -5,6 +5,8 @@ Created on Wed Dec  5 09:37:09 2018
 @author: pamde
 """
 
+import sys
+
 ############################## Task 1 ##############################
 
 
@@ -155,9 +157,13 @@ class SuperRobot():
     def clean(self):
         return self.o3.clean()
     
-name = input('What\'s your cat\'s name: ')
-age = input('What\'s your cat\'s age: ')
+#name = input('What\'s your cat\'s name: ')
+#age = input('What\'s your cat\'s age: ')
+        
+name = sys.argv[1]
+age = sys.argv[2]
     
 machineCat = SuperRobot(name, age)
 machineCat.move()
 machineCat.meow()
+print(name, age)
