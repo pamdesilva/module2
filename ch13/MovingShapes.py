@@ -15,8 +15,8 @@ class MovingShape:
         self.figure = Shape(shape, diameter)
         self.x = 0
         self.y = 0
-        self.dx = 10
-        self.dy = 10
+        self.dx = 5 + 10 * r()
+        self.dy = 5 + 10 * r()
         self.goto(self.x, self.y)
         
     def goto(self, x, y):
