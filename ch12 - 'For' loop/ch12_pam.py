@@ -118,9 +118,9 @@ def sumValues(l):
 
 print(sumValues(values))
     
-#------------------------------
+#-------------------------------
 #TASK 10: Loop with index values
-#------------------------------
+#-------------------------------
 
 def multiplyValues(m):
     for i in range(len(values)):

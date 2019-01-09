@@ -71,9 +71,21 @@ p2.greetingFormal()
 #----------------------------------------------------
 
 class Wizard(Person):
-    def geetingFormal(self):
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.isMale = True
+            
+    def greetingFormal(self):
         print('Welcome, Mr', self.name, end=' ')
         print('- you\'re a fine wizard!')
         
-p1 = Wizard('Harry', 12, 'm')
+p1 = Wizard('Ron', 12, 'm')
+p1.greetingFormal()
+
+
+#-----------------------
+#TASK 5: Redefine init
+#-----------------------
+
 
